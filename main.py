@@ -8,6 +8,7 @@ from os import walk, getenv, system, getlogin
 from shutil import copyfile
 import pathlib
 import datetime
+import win32gui
 
 #link=https://stackoverflow.com/questions/4438020/how-to-start-a-python-file-while-windows-starts
 def add_to_startup(file_path=""):
@@ -33,6 +34,9 @@ def set_wallpaper_permanent(picPath):
 def set_wallpaper_temporary(picPath):
     ctypes.windll.user32.SystemParametersInfoA(20, 0, picPath.encode("us-ascii"), 2)
 
+def set_wallpaper_permanent2(picPath):
+    win32gui.SystemParametersInfo(0x0014, picPath, 1+2)
+    
 if __name__=='__main__':
 
     #only on windows 
@@ -71,6 +75,6 @@ if __name__=='__main__':
             #Convert Image
             picData = Image.open(picPath)
             picData.save(picPath)
+            picData.save(picPath.replace('jpg','bmp'))
             picPath = picPath.replace('jpg','bmp')
-            picPath.replace('jpg','bmp')
-    set_wallpaper_permanent(picPath)
+    set_wallpaper_permanent2(picPath)

@@ -2,4 +2,4 @@
 
 **Platform**: Windows
 
-This python fetches images from popular sources and set those as your desktop wallpaper.
+This python script fetches images from popular sources and set those as your desktop wallpaper.

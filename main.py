@@ -138,7 +138,9 @@ if __name__=='__main__':
     #add_to_startup()
     choice = 1
     directoryCheck()
+
     wp_bing = saveDir  + 'bingwallpaper' + date +'.jpg'
+    
     if path.isfile(wp_bing)==True:
         print ('Picture already found, updating that only')
         set_wallpaper_permanent(wp_bing)

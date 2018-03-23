@@ -13,7 +13,7 @@ import win32gui
 #get today's date
 date = str(datetime.date.today())
 
-SHOW_DEBUG = True
+SHOW_DEBUG = False
 #Directory to save images
 saveDir = 'F:\WallPaper\\'
 
@@ -136,7 +136,7 @@ if __name__=='__main__':
 
     #only on windows 
     #add_to_startup()
-    choice = 2
+    choice = 1
     directoryCheck()
     wp_bing = saveDir  + 'bingwallpaper' + date +'.jpg'
     if path.isfile(wp_bing)==True:
@@ -147,8 +147,8 @@ if __name__=='__main__':
         usock = get_usock_bing()   
         xmldoc = minidom.parse(usock)
         picPath_bing = picpath_bing(xmldoc)
-        if choice == 1:
-            set_wallpaper_permanent(picPath_bing)
-        else:
-            print ("In development")
-            set_wallpaper_permanent(picPath_bing)
+    if choice == 1:
+        set_wallpaper_permanent(picPath_bing)
+    else:
+        print ("In development")
+        set_wallpaper_permanent(picPath_bing)

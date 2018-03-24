@@ -178,7 +178,7 @@ if __name__=='__main__':
 
     #only on windows 
     #add_to_startup()
-    choice = 1
+    choice = 0
     directoryCheck()
 
     wp_bing = saveDir  + 'bingwallpaper' + date +'.jpg'

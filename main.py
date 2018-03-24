@@ -29,7 +29,7 @@ if __name__=='__main__':
     wp_pod = saveDir + 'NASA_PoD' + date + '.jpg'
 
     if choice == 1:
-        bing_wallpaper_changer.change_wp(wp_bing, SHOW_DEBUG)
+        bing_wallpaper_changer.change_wp( wp_bing, saveDir, SHOW_DEBUG)
 
     else:   
-        pod_wallpaper_changer.change_wp(wp_pod, SHOW_DEBUG)
+        pod_wallpaper_changer.change_wp( wp_pod, saveDir, SHOW_DEBUG)

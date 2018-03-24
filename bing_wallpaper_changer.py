@@ -64,13 +64,14 @@ from PIL import Image
 from os import path
 import pathlib
 import datetime
+
 from set_wallpaper_permanent import set_wallpaper_permanent
-from debug import *
+from debug import print_download_status
 
 #get today's date
 date = str(datetime.date.today())
 
-def picpath_bing(xmldoc, SHOW_DEBUG):
+def picpath_bing(xmldoc, saveDir, SHOW_DEBUG):
     #Parsing the XML File
     for element in xmldoc.getElementsByTagName('url'):
         if SHOW_DEBUG:
@@ -110,7 +111,7 @@ def get_usock_bing(SHOW_DEBUG):
             i = 1
     return usock
 
-def change_wp(wp_bing, SHOW_DEBUG):
+def change_wp(wp_bing, saveDir, SHOW_DEBUG):
     if path.isfile(wp_bing)==True:
         if SHOW_DEBUG:
             print ('Picture already found, updating that only')
@@ -120,5 +121,5 @@ def change_wp(wp_bing, SHOW_DEBUG):
             print ('Picture is not in the system, updating process start ...')
         usock = get_usock_bing(SHOW_DEBUG)   
         xmldoc = minidom.parse(usock)
-        picPath_bing = picpath_bing(xmldoc, SHOW_DEBUG)
+        picPath_bing = picpath_bing(xmldoc, saveDir, SHOW_DEBUG)
         set_wallpaper_permanent(picPath_bing, SHOW_DEBUG)

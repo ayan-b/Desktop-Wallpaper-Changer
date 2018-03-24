@@ -1,19 +1,18 @@
 import requests
 from urllib.request import urlopen, urlretrieve
-from xml.dom import minidom
 from PIL import Image
-from os import walk, getenv, system, getlogin, path
-from shutil import copyfile
+from os import path
 import pathlib
 import datetime
-import win32gui
-from sys import stdin, stdout
 from bs4 import BeautifulSoup
 
 from set_wallpaper_permanent import set_wallpaper_permanent
-from debug import *
+from debug import print_download_status
 
-def picpath_pod(file_url, SHOW_DEBUG):
+url = 'https://apod.nasa.gov/apod/'
+date = str(datetime.date.today())
+
+def picpath_pod(file_url, saveDir, SHOW_DEBUG):
     if SHOW_DEBUG:
         print ("Download from:%s" %file_url)
     file_url = url + file_url
@@ -36,13 +35,12 @@ def picpath_pod(file_url, SHOW_DEBUG):
     picPath_pod = picPath_pod.replace('jpg','bmp')
     return picPath_pod
 
-def change_wp(wp_pod, SHOW_DEBUG):
+def change_wp(wp_pod, saveDir, SHOW_DEBUG):
     if path.isfile(wp_pod)==True:
         if SHOW_DEBUG:
             print ('PoD Picture already found, updating that only')
         set_wallpaper_permanent(wp_pod, SHOW_DEBUG)
     else:
-        url = 'https://apod.nasa.gov/apod/'
         source_code = BeautifulSoup(urlopen(url).read(), "html.parser")
         link = source_code.find_all('a')
         if SHOW_DEBUG:
@@ -53,5 +51,5 @@ def change_wp(wp_pod, SHOW_DEBUG):
             if c==2:
                 file_url = link.get('href')
                 break
-        picPath_pod = picpath_pod(file_url, SHOW_DEBUG)
+        picPath_pod = picpath_pod(file_url, saveDir, SHOW_DEBUG)
         set_wallpaper_permanent(picPath_pod, SHOW_DEBUG)

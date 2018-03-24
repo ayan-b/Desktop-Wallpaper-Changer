@@ -1,7 +1,7 @@
 from sys import stdin, stdout
 
 def human_readable_size(number_bytes):
-    for x in ['bytes', 'KB', 'MB']:
+    for x in ['bytes', 'kilo', 'mega']:
         if number_bytes < 1024.0:
             return "%3.2f%s" % (number_bytes, x)
         number_bytes /= 1024.0

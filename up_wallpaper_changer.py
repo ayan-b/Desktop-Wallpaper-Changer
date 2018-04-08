@@ -4,12 +4,14 @@ from PIL import Image
 from os import path
 import pathlib
 import datetime
+import random
 
 from set_wallpaper_permanent import set_wallpaper_permanent
 from debug import print_download_status
 
-url = 'https://source.unsplash.com/random/2732x1536'
+url = 'https://source.unsplash.com/featured/2732x1536'
 date = str(datetime.date.today())
+date = date + str(random.randint(1,10000000))
 
 def picpath_unsplash(file_url, saveDir, SHOW_DEBUG):
     if SHOW_DEBUG:

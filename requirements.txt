@@ -1,0 +1,4 @@
+requests
+Pillow
+win32gui
+beautifulsoup4

@@ -7,6 +7,7 @@ from set_wallpaper_permanent import set_wallpaper_permanent
 from add_to_startup import add_to_startup
 import bing_wallpaper_changer
 import pod_wallpaper_changer
+import up_wallpaper_changer
 
 SHOW_DEBUG = True
 #Directory to save images
@@ -22,14 +23,19 @@ if __name__=='__main__':
 
     #only on windows 
     #add_to_startup()
-    choice = 1
+    choice = 0
     directoryCheck()
-
+    print ("Choice: ? 0: APOD, 1: Bing, 2: Unsplash ",)
+    choice = int(input())
     wp_bing = saveDir  + 'bingwallpaper' + date +'.jpg'
     wp_pod = saveDir + 'NASA_PoD' + date + '.jpg'
+    wp_unsplash = saveDir + 'unsplash' + date + '.jpg'
 
     if choice == 1:
         bing_wallpaper_changer.change_wp( wp_bing, saveDir, SHOW_DEBUG)
 
-    else:   
+    elif choice == 0: 
         pod_wallpaper_changer.change_wp( wp_pod, saveDir, SHOW_DEBUG)
+    
+    else:
+        up_wallpaper_changer.change_wp( wp_unsplash, saveDir, SHOW_DEBUG)

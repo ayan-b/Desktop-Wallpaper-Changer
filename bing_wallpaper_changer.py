@@ -94,8 +94,8 @@ def picpath_bing(xmldoc, saveDir, SHOW_DEBUG):
         picData.save(picPath)
         if SHOW_DEBUG:
             print ('Saving ...')
-        picData.save(picPath.replace('jpg','bmp'))
-        picPath = picPath.replace('jpg','bmp')
+        #picData.save(picPath.replace('jpg','bmp'))
+        #picPath = picPath.replace('jpg','bmp')
     return picPath
 
 def get_usock_bing(SHOW_DEBUG):

@@ -15,9 +15,10 @@ date = str(datetime.date.today())
 def picpath_pod(file_url, saveDir, SHOW_DEBUG):
     if SHOW_DEBUG:
         print ("Download from:%s" %file_url)
+    temp = file_url
     file_url = url + file_url
     #Get Current Date as fileName for the downloaded Picture
-    picPath_pod = saveDir  + 'NASA_PoD' + date +'.jpg'
+    picPath_pod = saveDir  + 'NASA_PoD' + temp.replace('/','-') +'.jpg'
     if SHOW_DEBUG:
         urlretrieve(file_url, picPath_pod, print_download_status)
     else:
@@ -31,8 +32,6 @@ def picpath_pod(file_url, saveDir, SHOW_DEBUG):
     picData.save(picPath_pod)
     if SHOW_DEBUG:
         print ('Saving ...')
-    picData.save(picPath_pod.replace('jpg','bmp'))
-    picPath_pod = picPath_pod.replace('jpg','bmp')
     return picPath_pod
 
 def change_wp(wp_pod, saveDir, SHOW_DEBUG):

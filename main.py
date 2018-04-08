@@ -7,7 +7,7 @@ from set_wallpaper_permanent import set_wallpaper_permanent
 from add_to_startup import add_to_startup
 import bing_wallpaper_changer
 import pod_wallpaper_changer
-import up_wallpaper_changer
+import unsplash_wallpaper_changer
 
 SHOW_DEBUG = True
 #Directory to save images
@@ -38,4 +38,4 @@ if __name__=='__main__':
         pod_wallpaper_changer.change_wp( wp_pod, saveDir, SHOW_DEBUG)
     
     else:
-        up_wallpaper_changer.change_wp( wp_unsplash, saveDir, SHOW_DEBUG)
+        unsplash_wallpaper_changer.change_wp( wp_unsplash, saveDir, SHOW_DEBUG)

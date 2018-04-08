@@ -1,5 +1,5 @@
 # Desktop Wallpaper Changer
-
+[![HitCount](http://hits.dwyl.io/ayan-b/Desktop-Wallpaper-Changer.svg)](http://hits.dwyl.io/ayan-b/Desktop-Wallpaper-Changer)
 **Platform**: Windows
 
 **Description**:

@@ -1,4 +1,4 @@
 requests
 Pillow
-win32gui
+pywin32
 beautifulsoup4

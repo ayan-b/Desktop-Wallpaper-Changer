@@ -25,7 +25,7 @@ if __name__=='__main__':
     #add_to_startup()
     choice = 0
     directoryCheck()
-    print ("Choice: ? 0: APOD, 1: Bing, 2: Unsplash ",)
+    print ("Choice: ? 0: NASA Astronomy Picture of the Day, 1: Bing Image of the Day, 2: Random Pictures from Unsplash ",)
     choice = int(input())
     wp_bing = saveDir  + 'bingwallpaper' + date +'.jpg'
     wp_pod = saveDir + 'NASA_PoD' + date + '.jpg'

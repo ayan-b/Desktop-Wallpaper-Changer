@@ -8,10 +8,11 @@ from add_to_startup import add_to_startup
 import bing_wallpaper_changer
 import pod_wallpaper_changer
 import unsplash_wallpaper_changer
+import os
 
 SHOW_DEBUG = True
 #Directory to save images
-saveDir = 'F:\WallPaper\\'
+saveDir = saveDir = os.path.join(os.getcwd(), r'WallPaper')
 
 date = str(datetime.date.today())
 

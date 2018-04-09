@@ -1,5 +1,4 @@
 requests==2.18.4
 Pillow==5.1.0
 beautifulsoup4==4.6.0
-win32gui==221.6
 pywin32==223

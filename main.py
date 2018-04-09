@@ -2,17 +2,20 @@
 
 import datetime
 import pathlib
+import os
 
 from set_wallpaper_permanent import set_wallpaper_permanent
 from add_to_startup import add_to_startup
 import bing_wallpaper_changer
 import pod_wallpaper_changer
 import unsplash_wallpaper_changer
-import os
 
 SHOW_DEBUG = True
 #Directory to save images
-saveDir = saveDir = os.path.join(os.getcwd(), r'WallPaper')
+if os.path.exists("F:/")==True:
+    saveDir = "F:\WallPaper"
+else:
+    saveDir = os.path.join(os.getcwd(), r'WallPaper')
 
 date = str(datetime.date.today())
 

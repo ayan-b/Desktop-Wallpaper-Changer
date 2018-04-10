@@ -34,10 +34,8 @@ def picpath_pod(file_url, saveDir, url, modf, date, SHOW_DEBUG):
 
 
 def change_wp(wp_pod, saveDir, SHOW_DEBUG, date):
-    date = date - datetime.timedelta(days=1)
     url, modf = set_url(date)
-    if 0:
-    #if path.isfile(wp_pod)==True:
+    if path.isfile(wp_pod)==True:
         if SHOW_DEBUG:
             print ('PoD Picture already found, updating that only')
         set_wallpaper_permanent(wp_pod, SHOW_DEBUG)

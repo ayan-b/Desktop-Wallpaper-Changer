@@ -31,6 +31,7 @@ def get_url(url, picPath, SHOW_DEBUG):
         print ('Some error occurred: %s. Exiting' % (str(e)))
         if os.path.isfile(picPath):
             os.remove(picPath)
+        exit()
 
         
     if SHOW_DEBUG:

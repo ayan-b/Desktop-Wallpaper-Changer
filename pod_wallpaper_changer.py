@@ -1,6 +1,5 @@
 import requests
 from urllib.request import urlopen, urlretrieve
-from PIL import Image
 from os import path
 import pathlib
 import datetime
@@ -8,31 +7,25 @@ from bs4 import BeautifulSoup
 
 from set_wallpaper_permanent import set_wallpaper_permanent
 from debug import print_download_status
+from save_image import save_image
+from get_url import get_url
 
 url = 'https://apod.nasa.gov/apod/'
 date = str(datetime.date.today())
 
 def picpath_pod(file_url, saveDir, SHOW_DEBUG):
-    if SHOW_DEBUG:
-        print ("Download from:%s" %file_url)
     temp = file_url
     file_url = url + file_url
-    #Get Current Date as fileName for the downloaded Picture
     picPath_pod = saveDir  + 'NASA_PoD' + temp.replace('/','-') +'.jpg'
     if SHOW_DEBUG:
-        urlretrieve(file_url, picPath_pod, print_download_status)
-    else:
-        urlretrieve(file_url, picPath_pod)
-    if SHOW_DEBUG:
-        print ('URL retrieved')
-    #Convert Image
-    picData = Image.open(picPath_pod)
-    if SHOW_DEBUG:
-        print ('Image opened')
-    picData.save(picPath_pod)
-    if SHOW_DEBUG:
-        print ('Saving ...')
+        print ( "Download from: %s" %file_url )
+
+    picPath_pod = get_url ( file_url, picPath_pod, SHOW_DEBUG )
+    picPath_pod = save_image ( picPath_pod, SHOW_DEBUG )
+    picPath_pod = save_image ( picPath_pod, SHOW_DEBUG )
+
     return picPath_pod
+
 
 def change_wp(wp_pod, saveDir, SHOW_DEBUG):
     if path.isfile(wp_pod)==True:

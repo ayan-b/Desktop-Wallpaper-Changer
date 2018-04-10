@@ -60,13 +60,14 @@ BING_MARKETS = [u'ar-XA',
 import requests
 from urllib.request import urlopen, urlretrieve
 from xml.dom import minidom
-from PIL import Image
 from os import path
 import pathlib
 import datetime
 
 from set_wallpaper_permanent import set_wallpaper_permanent
 from debug import print_download_status
+from save_image import save_image
+from get_url import get_url
 
 #get today's date
 date = str(datetime.date.today())
@@ -81,21 +82,9 @@ def picpath_bing(xmldoc, saveDir, SHOW_DEBUG):
             print ("Download from:%s" %url)
         #Get Current Date as fileName for the downloaded Picture
         picPath = saveDir  + 'bingwallpaper' + date +'.jpg'
-        if SHOW_DEBUG:
-            urlretrieve(url, picPath, print_download_status)
-        else:
-            urlretrieve(url, picPath)
-        if SHOW_DEBUG:
-            print ('URL retrieved')
-        #Convert Image
-        picData = Image.open(picPath)
-        if SHOW_DEBUG:
-            print ('Image opened')
-        picData.save(picPath)
-        if SHOW_DEBUG:
-            print ('Saving ...')
-        #picData.save(picPath.replace('jpg','bmp'))
-        #picPath = picPath.replace('jpg','bmp')
+        picPath = get_url (url, picPath, SHOW_DEBUG )
+        picPath = save_image( picPath, SHOW_DEBUG )
+
     return picPath
 
 def get_usock_bing(SHOW_DEBUG):
@@ -118,7 +107,7 @@ def change_wp(wp_bing, saveDir, SHOW_DEBUG):
         set_wallpaper_permanent(wp_bing, SHOW_DEBUG)
     else:
         if SHOW_DEBUG:
-            print ('Picture is not in the system, updating process start ...')
+            print ('Picture is not in the system, updating process starts ...')
         usock = get_usock_bing(SHOW_DEBUG)   
         xmldoc = minidom.parse(usock)
         picPath_bing = picpath_bing(xmldoc, saveDir, SHOW_DEBUG)

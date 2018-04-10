@@ -12,21 +12,22 @@ import unsplash_wallpaper_changer
 
 SHOW_DEBUG = True
 #Directory to save images
-if os.path.exists("F:/")==True:
-    saveDir = "F:\WallPaper"
+if os.path.exists("F:")==True:
+    saveDir = "F:\WallPaper\\"
 else:
     saveDir = os.path.join(os.getcwd(), r'WallPaper')
 
 date = str(datetime.date.today())
 
 def directoryCheck ():
-    #create the directory directory if it does not exist
+    #create the directory if it does not exist
     pathlib.Path(saveDir).mkdir(parents=True, exist_ok=True)
 
 if __name__=='__main__':
 
     #only on windows 
     #add_to_startup()
+    
     choice = 0
     directoryCheck()
     print ("Choice: ? 0: NASA Astronomy Picture of the Day, 1: Bing Image of the Day, 2: Random Pictures from Unsplash ",)

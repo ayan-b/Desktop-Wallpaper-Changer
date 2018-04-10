@@ -20,23 +20,6 @@ def picpath_unsplash(file_url, saveDir, SHOW_DEBUG):
 
     #Get Current Date as fileName for the downloaded Picture
     picPath_unsplash = saveDir  + 'unsplash' + date +'.jpg'
-    #     if SHOW_DEBUG:
-    #         urlretrieve(file_url, picPath_unsplash, print_download_status)
-    #     else:
-    #         urlretrieve(file_url, picPath_unsplash)
-    #     if SHOW_DEBUG:
-    #         print ('URL retrieved')
-    #     #Convert Image
-    #     picPath_unsplash = save_image( picPath, SHOW_DEBUG )
-    #     return picPath_unsplash
-
-    # except urllib.error.URLError as e:
-    #     print('URLError: %s. Exiting' % (str(e)))
-    #     exit()
-
-    # except urllib.error.HTTPError as e:
-    #     print('HTTPError: %s. Exiting' % (str(e))) 
-    #     exit()
 
     picPath_unsplash = get_url ( file_url, picPath_unsplash, SHOW_DEBUG )
     picPath_unsplash = save_image ( picPath_unsplash, SHOW_DEBUG )

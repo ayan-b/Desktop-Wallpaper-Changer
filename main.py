@@ -11,6 +11,7 @@ import pod_wallpaper_changer
 import unsplash_wallpaper_changer
 
 SHOW_DEBUG = True
+
 #Directory to save images
 if os.path.exists("F:")==True:
     saveDir = "F:\WallPaper\\"

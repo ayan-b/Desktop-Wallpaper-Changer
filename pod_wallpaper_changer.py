@@ -1,7 +1,7 @@
 import requests
+import urllib
 from urllib.request import urlopen, urlretrieve
 from os import path
-import pathlib
 import datetime
 from bs4 import BeautifulSoup
 
@@ -40,24 +40,36 @@ def change_wp(wp_pod, saveDir, SHOW_DEBUG, date):
             print ('PoD Picture already found, updating that only')
         set_wallpaper_permanent(wp_pod, SHOW_DEBUG)
     else:
-        source_code = BeautifulSoup(urlopen(url).read(), "html.parser")
-        link = source_code.find_all('a')
         if SHOW_DEBUG:
-            print ('Getting URL for PoD')
-        c = 0
-        for link in source_code.findAll('a'):
-            c += 1
-            if c == 2:
-                file_url = link.get('href')
-                break
-        
-        # Today's APoD maybe a video
-        if not file_url.lower().endswith(img_formats):
-            date = date - datetime.timedelta(days=1)
+            print ('Picture is not in the system, updating process starts ...')
+        try:
+            source_code = BeautifulSoup(urlopen(url).read(), "html.parser")
+            link = source_code.find_all('a')
             if SHOW_DEBUG:
-                print("Today's PoD is not an image. Checking %s day's content ..." %( str(date) ))
-            change_wp(wp_pod, saveDir, SHOW_DEBUG, date)
+                print ('Getting URL for PoD')
+            c = 0
+            for link in source_code.findAll('a'):
+                c += 1
+                if c == 2:
+                    file_url = link.get('href')
+                    break
+            
+            # Today's APoD maybe a video
+            if not file_url.lower().endswith(img_formats):
+                prev_date = date
+                date = date - datetime.timedelta(days=1)
+                if SHOW_DEBUG:
+                    print("Today's PoD is not an image. Checking %s day's content ..." %( str(date) ))
+                wp_pod = wp_pod.replace(str(prev_date), str(date))
+                change_wp(wp_pod, saveDir, SHOW_DEBUG, date)
 
-        else:
-            picPath_pod = picpath_pod(file_url, saveDir, url, modf, date, SHOW_DEBUG)
-            set_wallpaper_permanent(picPath_pod, SHOW_DEBUG)
+            else:
+                picPath_pod = picpath_pod(file_url, saveDir, url, modf, date, SHOW_DEBUG)
+                set_wallpaper_permanent(picPath_pod, SHOW_DEBUG)
+
+        except urllib.error.HTTPError:
+            prev_date = date
+            date = date - datetime.timedelta(days=1)
+            print ("It seems that the image is not yet updated. Checking %s day's content ..." %( str(date)) )
+            wp_pod = wp_pod.replace(str(prev_date), str(date))
+            change_wp(wp_pod, saveDir, SHOW_DEBUG, date)

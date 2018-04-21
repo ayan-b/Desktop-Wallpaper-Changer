@@ -1,12 +1,13 @@
-from urllib.request import urlopen, urlretrieve
-from os import path
 import datetime
 import random
+import urllib
+from urllib.request import urlopen, urlretrieve
+from os import path
 
-from lib.set_wallpaper_permanent import set_wallpaper_permanent
 from lib.debug import print_download_status
-from lib.save_image import save_image
 from lib.get_url import get_url
+from lib.save_image import save_image
+from lib.set_wallpaper_permanent import set_wallpaper_permanent
 
 activate_search = True
 

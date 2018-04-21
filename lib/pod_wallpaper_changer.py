@@ -1,13 +1,14 @@
+import datetime
 import urllib
 from urllib.request import urlopen, urlretrieve
 from os import path
-import datetime
+
 from bs4 import BeautifulSoup
 
-from lib.set_wallpaper_permanent import set_wallpaper_permanent
 from lib.debug import print_download_status
-from lib.save_image import save_image
 from lib.get_url import get_url
+from lib.save_image import save_image
+from lib.set_wallpaper_permanent import set_wallpaper_permanent
 
 img_formats = ("jpg", "jpeg", "bmp", "png")
 
@@ -34,13 +35,16 @@ def picpath_pod(file_url, saveDir, url, modf, date, SHOW_DEBUG):
 
 def change_wp(wp_pod, saveDir, SHOW_DEBUG, date):
     url, modf = set_url(date)
-    if path.isfile(wp_pod)==True:
+
+    if path.isfile(wp_pod) == True:
         if SHOW_DEBUG:
             print ('PoD Picture already found, updating that only')
         set_wallpaper_permanent(wp_pod, SHOW_DEBUG)
+
     else:
         if SHOW_DEBUG:
             print ('Picture is not in the system, updating process starts ...')
+
         try:
             source_code = BeautifulSoup(urlopen(url).read(), "html.parser")
             link = source_code.find_all('a')

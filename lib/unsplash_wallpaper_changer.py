@@ -3,10 +3,10 @@ from os import path
 import datetime
 import random
 
-from set_wallpaper_permanent import set_wallpaper_permanent
-from debug import print_download_status
-from save_image import save_image
-from get_url import get_url
+from lib.set_wallpaper_permanent import set_wallpaper_permanent
+from lib.debug import print_download_status
+from lib.save_image import save_image
+from lib.get_url import get_url
 
 activate_search = True
 

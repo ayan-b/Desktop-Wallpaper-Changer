@@ -4,14 +4,14 @@ from os import path
 import datetime
 from bs4 import BeautifulSoup
 
-from set_wallpaper_permanent import set_wallpaper_permanent
-from debug import print_download_status
-from save_image import save_image
-from get_url import get_url
+from lib.set_wallpaper_permanent import set_wallpaper_permanent
+from lib.debug import print_download_status
+from lib.save_image import save_image
+from lib.get_url import get_url
 
 img_formats = ("jpg", "jpeg", "bmp", "png")
 
-url_root = 'www.space.com/34-image-day.html'
+url_root = 'https://apod.nasa.gov/apod/'
 
 def set_url(date):
     date_format = str(datetime.datetime.strftime(date, "%y%m%d"))
@@ -19,10 +19,10 @@ def set_url(date):
     url = url_root + modf
     return url, modf
 
-def picpath_SWC(file_url, saveDir, url, modf, date, SHOW_DEBUG):
+def picpath_pod(file_url, saveDir, url, modf, date, SHOW_DEBUG):
     file_url = url + file_url
     file_url = file_url.replace(modf,"")
-    picPath_swc = saveDir  + 'NASA_PoD' + str(date) + '.jpg'
+    picPath_pod = saveDir  + 'NASA_PoD' + str(date) + '.jpg'
     if SHOW_DEBUG:
         print ( "Download from: %s" %file_url )
 

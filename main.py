@@ -4,12 +4,12 @@ import datetime
 import pathlib
 import os
 
-from set_wallpaper_permanent import set_wallpaper_permanent
-from add_to_startup import add_to_startup
-import bing_wallpaper_changer
-import pod_wallpaper_changer
-import unsplash_wallpaper_changer
-import space_wallpaper_changer
+from lib.set_wallpaper_permanent import set_wallpaper_permanent
+from lib.add_to_startup import add_to_startup
+import lib.bing_wallpaper_changer
+import lib.pod_wallpaper_changer
+import lib.unsplash_wallpaper_changer
+import lib.space_wallpaper_changer
 
 SHOW_DEBUG = True
 
@@ -40,13 +40,13 @@ if __name__=='__main__':
     wp_space = saveDir + 'space' + str(date) + '.jpg'
 
     if choice == 1:
-        bing_wallpaper_changer.change_wp( wp_bing, saveDir, SHOW_DEBUG )
+        lib.bing_wallpaper_changer.change_wp( wp_bing, saveDir, SHOW_DEBUG )
 
     elif choice == 0: 
-        pod_wallpaper_changer.change_wp( wp_pod, saveDir, SHOW_DEBUG, date )
+        lib.pod_wallpaper_changer.change_wp( wp_pod, saveDir, SHOW_DEBUG, date )
     
     elif choice == 2:
-        unsplash_wallpaper_changer.change_wp( wp_unsplash, saveDir, SHOW_DEBUG )
+        lib.unsplash_wallpaper_changer.change_wp( wp_unsplash, saveDir, SHOW_DEBUG )
 
     elif choice == 3:
         print ('Under Development')

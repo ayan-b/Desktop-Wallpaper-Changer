@@ -2,8 +2,8 @@ import urllib
 from urllib.request import urlopen, urlretrieve
 import os
 
-from debug import print_download_status
-from save_image import save_image
+from lib.debug import print_download_status
+from lib.save_image import save_image
 
 def get_url(url, picPath, SHOW_DEBUG):
 

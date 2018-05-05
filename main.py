@@ -11,6 +11,7 @@ import lib.pod_wallpaper_changer
 import lib.unsplash_wallpaper_changer
 import lib.space_wallpaper_changer
 import lib.natgeopod_wallpaper_changer
+import lib.desktoppr_wallpaper_changer
 
 SHOW_DEBUG = True
 
@@ -21,6 +22,7 @@ if os.path.exists("F:")==True:
     saveDirUnsplash = "F:\\WallPaper\\Unsplash\\"
     saveDirSpace = "F:\\WallPaper\\Space\\"  
     saveDirNatGeoPoD = "F:\\WallPaper\\NatGeoPoD\\"
+    saveDirDesktoppr = "F:\\WallPaper\\Desktoppr\\"
 
 else:
     saveDirBing = os.path.join(os.getcwd(), r'WallPaper\\Bing\\')
@@ -28,6 +30,7 @@ else:
     saveDirUnsplash = os.path.join(os.getcwd(), r'WallPaper\\Unsplash\\')
     saveDirSpace = os.path.join(os.getcwd(), r'WallPaper\\Space\\')
     saveDirNatGeoPoD = os.path.join(os.getcwd(), r'WallPaper\\NatGeoPoD\\')
+    saveDirDesktoppr = os.path.join(os.getcwd(), r'WallPaper\\Desktoppr\\')
 
 
 date = datetime.date.today()
@@ -39,6 +42,7 @@ def directoryCheck ():
     pathlib.Path(saveDirUnsplash).mkdir(parents=True, exist_ok=True)
     pathlib.Path(saveDirSpace).mkdir(parents=True, exist_ok=True)
     pathlib.Path(saveDirNatGeoPoD).mkdir(parents=True, exist_ok=True)
+    pathlib.Path(saveDirDesktoppr).mkdir(parents=True, exist_ok=True)
 
 if __name__=='__main__':
 
@@ -47,13 +51,22 @@ if __name__=='__main__':
 
     choice = 0
     directoryCheck()
-    print ("Choice: ? 0: NASA Astronomy Picture of the Day, 1: Bing Image of the Day, 2: Random Pictures from Unsplash, 3: Space.com Image of the day, 4: National Geographic PoD ",)
+    print ("""Choice: ? 
+                0: NASA Astronomy Picture of the Day,
+                1: Bing Image of the Day, 
+                2: Random Pictures from Unsplash, 
+                3: Space.com Image of the day, 
+                4: National Geographic PoD, 
+                5: Random Images from Desktoppr""",)
+
     choice = int(input())
     wp_bing = saveDirBing  + 'bingwallpaper' + str(date) +'.jpg'
     wp_pod = saveDirAPoD + 'NASA_PoD' + str(date) + '.jpg'
     wp_unsplash = saveDirUnsplash + 'unsplash' + str(date) + '.jpg'
     wp_space = saveDirSpace + 'space' + str(date) + '.jpg'
     wp_natgeo_pod = saveDirNatGeoPoD + 'NatGeo_PoD' + str(date) + '.jpg'
+    wp_desktoppr = saveDirDesktoppr + 'Desktoppr' + str(date) + '.jpg'
+    
 
     if choice == 1:
         lib.bing_wallpaper_changer.change_wp( wp_bing, saveDirBing, SHOW_DEBUG )
@@ -70,3 +83,6 @@ if __name__=='__main__':
     
     elif choice == 4:
         lib.natgeopod_wallpaper_changer.change_wp(wp_natgeo_pod, saveDirNatGeoPoD, SHOW_DEBUG)
+
+    elif choice == 5:
+        lib.desktoppr_wallpaper_changer.change_wp (wp_desktoppr, saveDirDesktoppr, SHOW_DEBUG)

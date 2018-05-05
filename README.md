@@ -4,7 +4,7 @@
 **Platform**: Windows
 
 **Description**:
-    This python script fetches images from popular sources and set those as your desktop wallpaper. Currently supported sources are NASA Astronomical Picture of the Day, Bing Picture of the Day and Random Pictures from Unsplash.com and National Geographic Picture of the Day.
+    This python script fetches images from popular sources and set those as your desktop wallpaper. Currently supported sources are NASA Astronomical Picture of the Day, Bing Picture of the Day and Random Pictures from Unsplash.com, National Geographic Picture of the Day and Random Images from Desktoppr.
 
 **Contributing**:
     Found a bug or thought of a cool feature? Open up an issue!

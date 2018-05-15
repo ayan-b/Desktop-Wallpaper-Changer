@@ -5,9 +5,9 @@ from urllib.request import urlopen, urlretrieve
 from os import path
 
 from lib.debug import print_download_status
-from lib.get_url import get_url
-from lib.save_image import save_image
-from lib.set_wallpaper_permanent import set_wallpaper_permanent
+from lib.utils import get_url
+from lib.utils import save_image
+from lib.utils import set_wallpaper_permanent
 
 activate_search = True
 

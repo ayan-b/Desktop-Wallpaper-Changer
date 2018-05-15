@@ -4,7 +4,7 @@ import datetime
 import pathlib
 import os
 
-from lib.set_wallpaper_permanent import set_wallpaper_permanent
+from lib.utils import set_wallpaper_permanent
 from lib.add_to_startup import add_to_startup
 import lib.bing_wallpaper_changer
 import lib.pod_wallpaper_changer

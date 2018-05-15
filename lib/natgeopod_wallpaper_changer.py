@@ -7,9 +7,9 @@ from os import path
 import requests
 
 from lib.debug import print_download_status
-from lib.get_url import get_url
-from lib.save_image import save_image
-from lib.set_wallpaper_permanent import set_wallpaper_permanent
+from lib.utils import get_url
+from lib.utils import save_image
+from lib.utils import set_wallpaper_permanent
 
 date = datetime.date.today()
 

@@ -1,4 +1,4 @@
-requests==2.18.4
+requests==2.19.0
 Pillow==5.1.0
 beautifulsoup4==4.6.0
 pywin32==223; sys_platform == 'win32'

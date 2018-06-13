@@ -1,7 +1,7 @@
 import datetime
+from os import path
 import urllib
 from urllib.request import urlopen, urlretrieve
-from os import path
 
 from bs4 import BeautifulSoup
 

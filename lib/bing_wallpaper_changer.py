@@ -1,8 +1,6 @@
-import requests
 from urllib.request import urlopen, urlretrieve
-from xml.dom import minidom
-from os import path
-import datetime
+
+import requests
 
 from lib.debug import print_download_status
 from lib.utils import get_url

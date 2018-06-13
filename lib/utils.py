@@ -1,6 +1,6 @@
+import os
 import urllib
 from urllib.request import urlopen, urlretrieve
-import os
 
 from PIL import Image
 import win32gui

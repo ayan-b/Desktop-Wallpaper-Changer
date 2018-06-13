@@ -1,8 +1,8 @@
 import datetime
 import json
+from os import path
 import urllib
 from urllib.request import urlopen, urlretrieve
-from os import path
 
 import requests
 

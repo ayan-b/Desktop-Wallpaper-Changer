@@ -1,8 +1,8 @@
 import datetime
+from os import path
 import random
 import urllib
 from urllib.request import urlopen, urlretrieve
-from os import path
 
 from lib.debug import print_download_status
 from lib.utils import get_url

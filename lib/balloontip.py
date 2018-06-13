@@ -1,4 +1,4 @@
-#credits:https://github.com/K-DawG007/Stack-Watch/blob/master/windows_popup.py
+# credits:https://github.com/K-DawG007/Stack-Watch/blob/master/windows_popup.py
 
 import os
 import sys
@@ -7,6 +7,7 @@ import time
 from win32api import GetModuleHandle
 import win32con
 import win32gui
+
 
 class WindowsBalloonTip:
     def __init__(self, title, msg):
@@ -58,4 +59,3 @@ class WindowsBalloonTip:
 def balloon_tip(title, msg):
     w = WindowsBalloonTip(title, msg)
     return w
-

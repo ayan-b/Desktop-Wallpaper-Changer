@@ -9,7 +9,6 @@ from lib.add_to_startup import add_to_startup
 import lib.bing_wallpaper_changer
 import lib.pod_wallpaper_changer
 import lib.unsplash_wallpaper_changer
-import lib.space_wallpaper_changer
 import lib.natgeopod_wallpaper_changer
 import lib.desktoppr_wallpaper_changer
 
@@ -55,9 +54,8 @@ if __name__=='__main__':
                 0: NASA Astronomy Picture of the Day,
                 1: Bing Image of the Day, 
                 2: Random Pictures from Unsplash, 
-                3: Space.com Image of the day, 
-                4: National Geographic PoD, 
-                5: Random Images from Desktoppr""",)
+                3: National Geographic PoD, 
+                4: Random Images from Desktoppr""",)
 
     choice = int(input())
     wp_bing = saveDirBing  + 'bingwallpaper' + str(date) +'.jpg'
@@ -76,13 +74,9 @@ if __name__=='__main__':
     
     elif choice == 2:
         lib.unsplash_wallpaper_changer.change_wp( wp_unsplash, saveDirUnsplash, SHOW_DEBUG )
-
-    elif choice == 3:
-        print ('Under Development')
-        #space_wallpaper_changer.change_wp( wp_space, saveDirSpace, SHOW_DEBUG )
     
-    elif choice == 4:
+    elif choice == 3:
         lib.natgeopod_wallpaper_changer.change_wp(wp_natgeo_pod, saveDirNatGeoPoD, SHOW_DEBUG)
 
-    elif choice == 5:
+    elif choice == 4:
         lib.desktoppr_wallpaper_changer.change_wp (wp_desktoppr, saveDirDesktoppr, SHOW_DEBUG)

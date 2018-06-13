@@ -4,13 +4,13 @@ import datetime
 import pathlib
 import os
 
-from lib.utils import set_wallpaper_permanent
 from lib.add_to_startup import add_to_startup
 import lib.bing_wallpaper_changer
+import lib.desktoppr_wallpaper_changer
+import lib.natgeopod_wallpaper_changer
 import lib.pod_wallpaper_changer
 import lib.unsplash_wallpaper_changer
-import lib.natgeopod_wallpaper_changer
-import lib.desktoppr_wallpaper_changer
+from lib.utils import set_wallpaper_permanent
 
 SHOW_DEBUG = True
 

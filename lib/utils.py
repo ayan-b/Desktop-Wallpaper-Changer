@@ -47,6 +47,7 @@ def save_image(url, picPath, SHOW_DEBUG):
         print('Saving ...')
     return picPath
 
+
 def set_wallpaper_permanent(picPath, SHOW_DEBUG):
     if SHOW_DEBUG:
         print('Setting the wallpaper')

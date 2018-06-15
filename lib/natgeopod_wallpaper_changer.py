@@ -7,7 +7,6 @@ from urllib.request import urlopen, urlretrieve
 import requests
 
 from lib.debug import print_download_status
-from lib.utils import get_url
 from lib.utils import save_image
 from lib.utils import set_wallpaper_permanent
 
@@ -37,8 +36,7 @@ def picpath_natgeo_pod(saveDir, SHOW_DEBUG):
     if SHOW_DEBUG:
         print("Download from: ", photo_url)
 
-    natgeo_pod = get_url(photo_url, natgeo_pod_path, SHOW_DEBUG)
-    savelink = save_image(natgeo_pod, SHOW_DEBUG)
+    savelink = save_image(photo_url, natgeo_pod_path, SHOW_DEBUG)
 
     return savelink
 

@@ -9,7 +9,7 @@ from lib.balloontip import balloon_tip
 from lib.debug import print_download_status
 
 
-def get_url(url, picPath, SHOW_DEBUG):
+def save_image(url, picPath, SHOW_DEBUG):
     try:
         if SHOW_DEBUG:
             urlretrieve(url, picPath, print_download_status)
@@ -39,10 +39,6 @@ def get_url(url, picPath, SHOW_DEBUG):
     if SHOW_DEBUG:
         print('URL retrieved')
 
-    return picPath
-
-
-def save_image(picPath, SHOW_DEBUG):
     picData = Image.open(picPath)
     if SHOW_DEBUG:
         print('Image opened')
@@ -50,7 +46,6 @@ def save_image(picPath, SHOW_DEBUG):
     if SHOW_DEBUG:
         print('Saving ...')
     return picPath
-
 
 def set_wallpaper_permanent(picPath, SHOW_DEBUG):
     if SHOW_DEBUG:

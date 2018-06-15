@@ -5,7 +5,6 @@ import urllib
 from urllib.request import urlopen, urlretrieve
 
 from lib.debug import print_download_status
-from lib.utils import get_url
 from lib.utils import save_image
 from lib.utils import set_wallpaper_permanent
 
@@ -22,8 +21,7 @@ def picpath_unsplash(file_url, saveDir, SHOW_DEBUG):
     picPath_unsplash = saveDir + 'unsplash' + str(date) + str(
         random.randint(1, 10000000)) + '.jpg'
 
-    picPath_unsplash = get_url(file_url, picPath_unsplash, SHOW_DEBUG)
-    picPath_unsplash = save_image(picPath_unsplash, SHOW_DEBUG)
+    picPath_unsplash = save_image(file_url, picPath_unsplash, SHOW_DEBUG)
 
     return picPath_unsplash
 
@@ -35,7 +33,7 @@ def change_wp(wp_unsplash, saveDir, SHOW_DEBUG):
         choice = int(input(
             'Do you want to search for specific images? 0: No, 1: Yes : '))
 
-        if (choice == 1):
+        if choice == 1:
             search_terms = input(
                 'Input the search terms (Space separated):').split()
             if len(search_terms) != 0:

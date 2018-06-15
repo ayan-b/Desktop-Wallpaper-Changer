@@ -6,7 +6,6 @@ from xml.dom import minidom
 import requests
 
 from lib.debug import print_download_status
-from lib.utils import get_url
 from lib.utils import save_image
 from lib.utils import set_wallpaper_permanent
 
@@ -26,8 +25,7 @@ def picpath_bing(xmldoc, saveDir, SHOW_DEBUG):
             print("Download from:", url)
         # Get Current Date as fileName for the downloaded Picture
         picPath = saveDir + 'bingwallpaper' + date + '.jpg'
-        picPath = get_url(url, picPath, SHOW_DEBUG)
-        picPath = save_image(picPath, SHOW_DEBUG)
+        picPath = save_image(url, picPath, SHOW_DEBUG)
 
     return picPath
 

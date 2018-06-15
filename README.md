@@ -13,5 +13,4 @@
 * Random Images from Desktoppr.
 
 **Contributing**:
-    Found a bug or thought of a cool feature? Open up an issue!
-    Fixed a bug or added an awesome feature? Make a pull request!
+    Please headover to [CONTRIBUTING.md](/CONTRIBUTING.md) to check out how the code works and some guidelines regarding contributions!

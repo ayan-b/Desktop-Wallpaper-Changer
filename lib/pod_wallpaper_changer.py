@@ -6,7 +6,6 @@ from urllib.request import urlopen, urlretrieve
 from bs4 import BeautifulSoup
 
 from lib.debug import print_download_status
-from lib.utils import get_url
 from lib.utils import save_image
 from lib.utils import set_wallpaper_permanent
 
@@ -29,8 +28,7 @@ def picpath_pod(file_url, saveDir, url, modf, date, SHOW_DEBUG):
     if SHOW_DEBUG:
         print("Download from: %s" % file_url)
 
-    picPath_pod = get_url(file_url, picPath_pod, SHOW_DEBUG)
-    picPath_pod = save_image(picPath_pod, SHOW_DEBUG)
+    picPath_pod = save_image(file_url, picPath_pod, SHOW_DEBUG)
 
     return picPath_pod
 

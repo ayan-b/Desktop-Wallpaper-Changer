@@ -4,7 +4,7 @@
 
 The code is quite modular and here is a brief overview how it works.
 
-There is global variable `SHOW_DEBUG` which is taken as a parameter by almost all functions. If this is set to true it shows useful debugging info and a nice progress bar.
+There is a global variable `SHOW_DEBUG` which is taken as a parameter by almost all functions. If this is set to true it shows useful debugging info and a nice progress bar.
 
 Inside the `lib` folder the python codes reside.
 

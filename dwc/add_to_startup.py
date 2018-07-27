@@ -1,7 +1,8 @@
 from os import getlogin, path
 
+
 def add_to_startup(file_path=""):
-    #link=https://stackoverflow.com/questions/4438020/how-to-start-a-python-file-while-windows-starts
+    # link=https://stackoverflow.com/questions/4438020/how-to-start-a-python-file-while-windows-starts
     USER_NAME = getlogin()
     if file_path == "":
         file_path = path.dirname(path.realpath(__file__))

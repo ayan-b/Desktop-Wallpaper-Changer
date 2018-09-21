@@ -56,6 +56,7 @@ def throw_choices():
     choice = int(input())
     return choice
 
+
 def main():
     # only on windows
     # add_to_startup()
@@ -91,4 +92,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    

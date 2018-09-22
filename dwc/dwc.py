@@ -9,7 +9,6 @@ import desktoppr_wallpaper_changer
 import natgeopod_wallpaper_changer
 import pod_wallpaper_changer
 import unsplash_wallpaper_changer
-from utils import set_wallpaper_permanent
 
 SHOW_DEBUG = True
 

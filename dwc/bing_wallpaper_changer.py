@@ -3,8 +3,6 @@ from os import path
 from urllib.request import urlopen
 from xml.dom import minidom
 
-import requests
-
 from utils import save_image, set_wallpaper_permanent
 
 # get today's date

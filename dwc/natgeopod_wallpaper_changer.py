@@ -3,27 +3,21 @@ from os import path
 
 import requests
 
-from debug import print_download_status
 from utils import save_image, set_wallpaper_permanent
 
 date = datetime.date.today()
 
 
 def get_photourl():
-    url = 'https://www.nationalgeographic.com/photography/photo-of-the-day/\
-_jcr_content/.gallery.'
-    month = str(date.month)
-    year = str(date.year)
-    if date.month < 10:
-        month = '0' + month
-    url = url + year + '-' + month + '.json'
+    url = 'https://www.nationalgeographic.com/photography/photo-of-the-day/_jcr_content/.gallery.json'
     source = requests.get(url)
+    print(source)
     if source.status_code == 200:
         source_code = source.json()
-        if 'items' in source_code:
-            photo = source_code['items'][0]
-            photo_url = photo['url'] + photo['sizes']['2048']
-            return str(photo_url)
+        photo_url = source_code['items'][0]['sizes']['2048']
+        return photo_url
+    else:
+        return "Proper URL not received"
 
 
 def picpath_natgeo_pod(saveDir, SHOW_DEBUG):
@@ -31,9 +25,7 @@ def picpath_natgeo_pod(saveDir, SHOW_DEBUG):
     natgeo_pod_path = saveDir + 'NatGeo_PoD' + str(date) + '.jpg'
     if SHOW_DEBUG:
         print("Download from: ", photo_url)
-
     savelink = save_image(photo_url, natgeo_pod_path, SHOW_DEBUG)
-
     return savelink
 
 

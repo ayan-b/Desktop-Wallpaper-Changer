@@ -1,7 +1,6 @@
 import datetime
 import random
 
-from debug import print_download_status
 from utils import save_image, set_wallpaper_permanent
 
 activate_search = True

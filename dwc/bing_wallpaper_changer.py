@@ -5,7 +5,6 @@ from xml.dom import minidom
 
 import requests
 
-from debug import print_download_status
 from utils import save_image, set_wallpaper_permanent
 
 # get today's date

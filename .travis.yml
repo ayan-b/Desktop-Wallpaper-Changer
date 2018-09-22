@@ -12,5 +12,6 @@ install:
     - pip install -r test-requirements.txt 
 
 script:
+    - echo "skipping tests"
     - coala --non-interactive
     

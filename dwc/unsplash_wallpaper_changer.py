@@ -1,11 +1,8 @@
 import datetime
-from os import path
 import random
-import urllib
-from urllib.request import urlopen, urlretrieve
 
-from dwc.debug import print_download_status
-from dwc.utils import save_image, set_wallpaper_permanent
+from debug import print_download_status
+from utils import save_image, set_wallpaper_permanent
 
 activate_search = True
 search_terms = []

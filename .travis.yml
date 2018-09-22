@@ -1,0 +1,17 @@
+language: python
+cache: pip
+
+matrix:
+    include:
+        - os: linux
+          sudo: required
+          dist: trusty
+          python: 3.6
+
+install:
+    - pip install -r test-requirements.txt 
+
+script:
+    - echo "skipping tests"
+    - coala --non-interactive
+    

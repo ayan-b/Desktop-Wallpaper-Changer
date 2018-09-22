@@ -1,13 +1,12 @@
 import datetime
 from os import path
-from urllib.request import urlopen, urlretrieve
+from urllib.request import urlopen
 from xml.dom import minidom
 
 import requests
 
-from dwc.debug import print_download_status
-from dwc.utils import save_image
-from dwc.utils import set_wallpaper_permanent
+from debug import print_download_status
+from utils import save_image, set_wallpaper_permanent
 
 # get today's date
 date = str(datetime.date.today())
@@ -19,8 +18,6 @@ def picpath_bing(xmldoc, saveDir, SHOW_DEBUG):
         if SHOW_DEBUG:
             print('Getting URL for Bing')
         url = 'http://www.bing.com' + element.firstChild.nodeValue
-        url = url.replace("1366x768", "1920x1200")
-        url = url.replace("1920x1080", "1920x1200")
         if SHOW_DEBUG:
             print("Download from:", url)
         # Get Current Date as fileName for the downloaded Picture
@@ -37,7 +34,6 @@ def get_usock_bing(SHOW_DEBUG):
 
 
 def change_wp(wp_bing, saveDir, SHOW_DEBUG):
-    # if 0:
     if path.isfile(wp_bing) is True:
         if SHOW_DEBUG:
             print('Picture already found, updating that only')

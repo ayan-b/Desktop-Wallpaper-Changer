@@ -1,12 +1,12 @@
 import datetime
 from os import path
 import urllib
-from urllib.request import urlopen, urlretrieve
+from urllib.request import urlopen
 
 from bs4 import BeautifulSoup
 
-from dwc.debug import print_download_status
-from dwc.utils import save_image, set_wallpaper_permanent
+from debug import print_download_status
+from utils import save_image, set_wallpaper_permanent
 
 img_formats = ("jpg", "jpeg", "bmp", "png")
 

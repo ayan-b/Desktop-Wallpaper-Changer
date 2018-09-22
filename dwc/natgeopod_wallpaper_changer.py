@@ -1,13 +1,10 @@
 import datetime
-import json
 from os import path
-import urllib
-from urllib.request import urlopen, urlretrieve
 
 import requests
 
-from dwc.debug import print_download_status
-from dwc.utils import save_image, set_wallpaper_permanent
+from debug import print_download_status
+from utils import save_image, set_wallpaper_permanent
 
 date = datetime.date.today()
 

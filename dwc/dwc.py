@@ -4,7 +4,6 @@ import datetime
 import pathlib
 import os
 
-from dwc.add_to_startup import add_to_startup
 import dwc.bing_wallpaper_changer
 import dwc.desktoppr_wallpaper_changer
 import dwc.natgeopod_wallpaper_changer

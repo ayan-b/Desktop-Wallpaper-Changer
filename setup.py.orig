@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-requirement_list = [r.strip()
+requirement_list = [r.strip() 
                     for r in open('requirements.txt', 'r').readlines() if r]
 
 if __name__ == '__main__':

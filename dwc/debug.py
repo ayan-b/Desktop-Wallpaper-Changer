@@ -1,4 +1,4 @@
-from sys import stdin, stdout
+from sys import stdout
 import time
 
 
@@ -25,5 +25,5 @@ def print_download_status(block_count, block_size, total_size):
     # Adding space padding at the end to ensure we overwrite the whole line
     stdout.write("\r%s of %s | %d percent | %0.2fs passed | %s/s " % (
         written_size, total_size, min(100, percent), duration, speed))
-    stdout.write("|%s%s|  " % ('█'*int(percent/2), ' '*(50-int(percent/2))))
+    stdout.write("|%s%s|  " % ('#'*int(percent/2), ' '*(50-int(percent/2))))
     stdout.flush()

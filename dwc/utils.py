@@ -1,12 +1,12 @@
 import os
 import urllib
-from urllib.request import urlopen, urlretrieve
+from urllib.request import urlretrieve
 
 from PIL import Image
 import win32gui
 
-from dwc.balloontip import balloon_tip
-from dwc.debug import print_download_status
+from balloontip import balloon_tip
+from debug import print_download_status
 
 
 def save_image(url, picPath, SHOW_DEBUG):

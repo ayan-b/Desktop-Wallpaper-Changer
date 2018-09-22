@@ -4,12 +4,12 @@ import datetime
 import pathlib
 import os
 
-import dwc.bing_wallpaper_changer
-import dwc.desktoppr_wallpaper_changer
-import dwc.natgeopod_wallpaper_changer
-import dwc.pod_wallpaper_changer
-import dwc.unsplash_wallpaper_changer
-from dwc.utils import set_wallpaper_permanent
+import bing_wallpaper_changer
+import desktoppr_wallpaper_changer
+import natgeopod_wallpaper_changer
+import pod_wallpaper_changer
+import unsplash_wallpaper_changer
+from utils import set_wallpaper_permanent
 
 SHOW_DEBUG = True
 
@@ -57,9 +57,6 @@ def throw_choices():
 
 
 def main():
-    # only on windows
-    # add_to_startup()
-
     choice = 0
     directoryCheck()
     choice = throw_choices()
@@ -70,22 +67,22 @@ def main():
     wp_desktoppr = saveDirDesktoppr + 'Desktoppr' + str(date) + '.jpg'
 
     if choice == 1:
-        dwc.bing_wallpaper_changer.change_wp(wp_bing, saveDirBing, SHOW_DEBUG)
+        bing_wallpaper_changer.change_wp(wp_bing, saveDirBing, SHOW_DEBUG)
 
     elif choice == 0:
-        dwc.pod_wallpaper_changer.change_wp(
+        pod_wallpaper_changer.change_wp(
             wp_pod, saveDirAPoD, SHOW_DEBUG, date)
 
     elif choice == 2:
-        dwc.unsplash_wallpaper_changer.change_wp(
+        unsplash_wallpaper_changer.change_wp(
             wp_unsplash, saveDirUnsplash, SHOW_DEBUG)
 
     elif choice == 3:
-        dwc.natgeopod_wallpaper_changer.change_wp(
+        natgeopod_wallpaper_changer.change_wp(
             wp_natgeo_pod, saveDirNatGeoPoD, SHOW_DEBUG)
 
     elif choice == 4:
-        dwc.desktoppr_wallpaper_changer.change_wp(
+        desktoppr_wallpaper_changer.change_wp(
             wp_desktoppr, saveDirDesktoppr, SHOW_DEBUG)
 
 

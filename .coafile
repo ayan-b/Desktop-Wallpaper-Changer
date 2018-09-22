@@ -1,0 +1,15 @@
+[all]
+files = *.py, dwc/*.py,
+max_line_length = 80
+use_spaces = True
+default_actions = *: ApplyPatchAction
+
+[all.python]
+bears = PEP8Bear, PyUnusedCodeBear
+files = *.py, dwc/*.py
+default_actions = *: ApplyPatchAction
+
+[all.linelength]  # Sometimes autopep8 makes too long lines, need to check after!
+bears = LineLengthBear
+ignore_length_regex = ^.*https?://
+default_actions = *: ApplyPatchAction

@@ -1,5 +1,5 @@
 # Desktop Wallpaper Changer
-[![HitCount](http://hits.dwyl.io/ayan-b/Desktop-Wallpaper-Changer.svg)](http://hits.dwyl.io/ayan-b/Desktop-Wallpaper-Changer)
+[![HitCount](http://hits.dwyl.io/ayan-b/Desktop-Wallpaper-Changer.svg)](http://hits.dwyl.io/ayan-b/Desktop-Wallpaper-Changer) [![Build Status](https://travis-ci.org/ayan-b/Desktop-Wallpaper-Changer.svg?branch=master)](https://travis-ci.org/ayan-b/Desktop-Wallpaper-Changer)
 
 **Platform**: Windows
 

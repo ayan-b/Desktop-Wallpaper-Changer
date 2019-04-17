@@ -30,12 +30,10 @@ def picpath_natgeo_pod(saveDir, SHOW_DEBUG):
 
 
 def change_wp(wp_natgeo_pod, saveDir, SHOW_DEBUG):
-
     if path.isfile(wp_natgeo_pod) is True:
         if SHOW_DEBUG:
             print('Nat Geo PoD Picture already found, updating that only')
         set_wallpaper_permanent(wp_natgeo_pod, SHOW_DEBUG)
-
     else:
         if SHOW_DEBUG:
             print('Picture is not in the system, updating process starts ...')

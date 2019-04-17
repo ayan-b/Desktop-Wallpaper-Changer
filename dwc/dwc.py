@@ -83,7 +83,3 @@ def main():
     elif choice == 4:
         desktoppr_wallpaper_changer.change_wp(
             wp_desktoppr, saveDirDesktoppr, SHOW_DEBUG)
-
-
-if __name__ == '__main__':
-    main()

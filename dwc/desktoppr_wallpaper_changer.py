@@ -19,15 +19,12 @@ def getphotourl():
 
 
 def picpath_desktoppr(saveDir, SHOW_DEBUG):
-
     photo_url = getphotourl()
     desktoppr_path = saveDir + 'Desktoppr' + str(date) + str(
                 random.randint(1, 100000)) + '.jpg'
     if SHOW_DEBUG:
         print("Download from: ", photo_url)
-
     savelink = save_image(photo_url, desktoppr_path, SHOW_DEBUG)
-
     return savelink
 
 

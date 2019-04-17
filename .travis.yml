@@ -14,4 +14,3 @@ install:
 script:
     - echo "skipping tests"
     - coala --non-interactive
-    

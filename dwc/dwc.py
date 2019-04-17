@@ -4,11 +4,11 @@ import datetime
 import pathlib
 import os
 
-import bing_wallpaper_changer
-import desktoppr_wallpaper_changer
-import natgeopod_wallpaper_changer
-import pod_wallpaper_changer
-import unsplash_wallpaper_changer
+import sources.bing as bing_wallpaper_changer
+import sources.desktoppr as desktoppr_wallpaper_changer
+import sources.natgeo_pod as natgeopod_wallpaper_changer
+import sources.nasa_pod as pod_wallpaper_changer
+import sources.unsplash as unsplash_wallpaper_changer
 
 SHOW_DEBUG = True
 

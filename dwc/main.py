@@ -13,7 +13,7 @@ def main():
         dwc.throw_choices()
     else:
         dwc.change_background(int(options["option"]))
-    
+
 
 def create_parser():
     """

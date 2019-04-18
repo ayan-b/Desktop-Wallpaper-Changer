@@ -21,7 +21,7 @@ stages:
   <<: *disable_global
   python: 3.6
   stage: lint
-  install: pip install -r test-requirements.txt
+  install: pip install coala-bears>=0.11.1
   script: coala --ci
 
 

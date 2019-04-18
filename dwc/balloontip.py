@@ -4,9 +4,10 @@ import os
 import sys
 import time
 
-from win32api import GetModuleHandle
-import win32con
-import win32gui
+if sys.platform.startswith('win32'):
+    from win32api import GetModuleHandle
+    import win32con
+    import win32gui
 
 
 class WindowsBalloonTip:

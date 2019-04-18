@@ -1,12 +1,12 @@
 import os
+import sys
 import urllib
 from urllib.request import urlretrieve
 
 from PIL import Image
-import win32gui
 
-from balloontip import balloon_tip
-from debug import print_download_status
+from dwc.balloontip import balloon_tip
+from dwc.debug import print_download_status
 
 
 def save_image(url, picPath, SHOW_DEBUG):
@@ -45,5 +45,17 @@ def save_image(url, picPath, SHOW_DEBUG):
 def set_wallpaper_permanent(picPath, SHOW_DEBUG):
     if SHOW_DEBUG:
         print('Setting the wallpaper')
-    win32gui.SystemParametersInfo(0x0014, picPath, 1+2)
-    balloon_tip("Desktop Wallpaper Changer", "Wallpaper Updated!")
+    if sys.platform.startswith('win32'):
+        import win32gui
+
+        win32gui.SystemParametersInfo(0x0014, picPath, 1+2)
+        balloon_tip("Desktop Wallpaper Changer", "Wallpaper Updated!")
+    elif sys.platform.startswith('linux'):
+        from gi.repository import Gio
+
+        gsettings = Gio.Settings.new('org.gnome.desktop.background')
+        gsettings.set_string('picture-uri', "file://" + picPath)
+        gsettings.apply()
+    else:
+        print('Sorry, your platform is not supported yet. Please open '
+              'an issue in the GitHub issue tracker')

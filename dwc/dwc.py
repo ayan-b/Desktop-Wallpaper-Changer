@@ -3,32 +3,42 @@
 import datetime
 import pathlib
 import os
+import sys
 
-import sources.bing as bing_wallpaper_changer
-import sources.desktoppr as desktoppr_wallpaper_changer
-import sources.natgeo_pod as natgeopod_wallpaper_changer
-import sources.nasa_pod as pod_wallpaper_changer
-import sources.unsplash as unsplash_wallpaper_changer
+import dwc.sources.bing as bing_wallpaper_changer
+import dwc.sources.desktoppr as desktoppr_wallpaper_changer
+import dwc.sources.natgeo_pod as natgeopod_wallpaper_changer
+import dwc.sources.nasa_pod as pod_wallpaper_changer
+import dwc.sources.unsplash as unsplash_wallpaper_changer
 
 SHOW_DEBUG = True
 
 
 # Directory to save images
 if os.path.exists("F:") is True:
+    # Windows system
     saveDirBing = "F:\\WallPaper\\Bing\\"
     saveDirAPoD = "F:\\WallPaper\\APoD\\"
     saveDirUnsplash = "F:\\WallPaper\\Unsplash\\"
     saveDirSpace = "F:\\WallPaper\\Space\\"
     saveDirNatGeoPoD = "F:\\WallPaper\\NatGeoPoD\\"
     saveDirDesktoppr = "F:\\WallPaper\\Desktoppr\\"
-
 else:
-    saveDirBing = os.path.join(os.getcwd(), r'WallPaper\\Bing\\')
-    saveDirAPoD = os.path.join(os.getcwd(), r'WallPaper\\APoD\\')
-    saveDirUnsplash = os.path.join(os.getcwd(), r'WallPaper\\Unsplash\\')
-    saveDirSpace = os.path.join(os.getcwd(), r'WallPaper\\Space\\')
-    saveDirNatGeoPoD = os.path.join(os.getcwd(), r'WallPaper\\NatGeoPoD\\')
-    saveDirDesktoppr = os.path.join(os.getcwd(), r'WallPaper\\Desktoppr\\')
+    if sys.platform.startswith("win32"):
+        # Windows platform but F: doesn't exist
+        saveDirBing = os.path.join(os.getcwd(), r'WallPaper\\Bing\\')
+        saveDirAPoD = os.path.join(os.getcwd(), r'WallPaper\\APoD\\')
+        saveDirUnsplash = os.path.join(os.getcwd(), r'WallPaper\\Unsplash\\')
+        saveDirSpace = os.path.join(os.getcwd(), r'WallPaper\\Space\\')
+        saveDirNatGeoPoD = os.path.join(os.getcwd(), r'WallPaper\\NatGeoPoD\\')
+        saveDirDesktoppr = os.path.join(os.getcwd(), r'WallPaper\\Desktoppr\\')
+    else:
+        saveDirBing = os.path.join(os.getcwd(), r'WallPaper/Bing/')
+        saveDirAPoD = os.path.join(os.getcwd(), r'WallPaper/APoD/')
+        saveDirUnsplash = os.path.join(os.getcwd(), r'WallPaper/Unsplash/')
+        saveDirSpace = os.path.join(os.getcwd(), r'WallPaper/Space/')
+        saveDirNatGeoPoD = os.path.join(os.getcwd(), r'WallPaper/NatGeoPoD/')
+        saveDirDesktoppr = os.path.join(os.getcwd(), r'WallPaper/Desktoppr/')
 
 date = datetime.date.today()
 
@@ -43,6 +53,29 @@ def directoryCheck():
     pathlib.Path(saveDirDesktoppr).mkdir(parents=True, exist_ok=True)
 
 
+def change_background(choice):
+    directoryCheck()
+    wp_bing = saveDirBing + 'bingwallpaper' + str(date) + '.jpg'
+    wp_pod = saveDirAPoD + 'NASA_PoD' + str(date) + '.jpg'
+    wp_unsplash = saveDirUnsplash + 'unsplash' + str(date) + '.jpg'
+    wp_natgeo_pod = saveDirNatGeoPoD + 'NatGeo_PoD' + str(date) + '.jpg'
+    wp_desktoppr = saveDirDesktoppr + 'Desktoppr' + str(date) + '.jpg'
+    if choice == 1:
+        bing_wallpaper_changer.change_wp(wp_bing, saveDirBing, SHOW_DEBUG)
+    elif choice == 0:
+        pod_wallpaper_changer.change_wp(
+            wp_pod, saveDirAPoD, SHOW_DEBUG, date)
+    elif choice == 2:
+        unsplash_wallpaper_changer.change_wp(
+            wp_unsplash, saveDirUnsplash, SHOW_DEBUG)
+    elif choice == 3:
+        natgeopod_wallpaper_changer.change_wp(
+            wp_natgeo_pod, saveDirNatGeoPoD, SHOW_DEBUG)
+    elif choice == 4:
+        desktoppr_wallpaper_changer.change_wp(
+            wp_desktoppr, saveDirDesktoppr, SHOW_DEBUG)
+
+
 def throw_choices():
     print("""Choice: ?
                 0: NASA Astronomy Picture of the Day,
@@ -50,36 +83,5 @@ def throw_choices():
                 2: Random Pictures from Unsplash,
                 3: National Geographic PoD,
                 4: Random Images from Desktoppr""",)
-
     choice = int(input())
-    return choice
-
-
-def main():
-    choice = 0
-    directoryCheck()
-    choice = throw_choices()
-    wp_bing = saveDirBing + 'bingwallpaper' + str(date) + '.jpg'
-    wp_pod = saveDirAPoD + 'NASA_PoD' + str(date) + '.jpg'
-    wp_unsplash = saveDirUnsplash + 'unsplash' + str(date) + '.jpg'
-    wp_natgeo_pod = saveDirNatGeoPoD + 'NatGeo_PoD' + str(date) + '.jpg'
-    wp_desktoppr = saveDirDesktoppr + 'Desktoppr' + str(date) + '.jpg'
-
-    if choice == 1:
-        bing_wallpaper_changer.change_wp(wp_bing, saveDirBing, SHOW_DEBUG)
-
-    elif choice == 0:
-        pod_wallpaper_changer.change_wp(
-            wp_pod, saveDirAPoD, SHOW_DEBUG, date)
-
-    elif choice == 2:
-        unsplash_wallpaper_changer.change_wp(
-            wp_unsplash, saveDirUnsplash, SHOW_DEBUG)
-
-    elif choice == 3:
-        natgeopod_wallpaper_changer.change_wp(
-            wp_natgeo_pod, saveDirNatGeoPoD, SHOW_DEBUG)
-
-    elif choice == 4:
-        desktoppr_wallpaper_changer.change_wp(
-            wp_desktoppr, saveDirDesktoppr, SHOW_DEBUG)
+    change_background(choice)

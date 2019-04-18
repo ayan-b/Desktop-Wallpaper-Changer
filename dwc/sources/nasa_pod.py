@@ -5,7 +5,7 @@ from urllib.request import urlopen
 
 from bs4 import BeautifulSoup
 
-from utils import save_image, set_wallpaper_permanent
+from dwc.utils import save_image, set_wallpaper_permanent
 
 img_formats = ("jpg", "jpeg", "bmp", "png")
 

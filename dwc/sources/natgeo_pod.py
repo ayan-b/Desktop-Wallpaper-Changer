@@ -3,7 +3,7 @@ from os import path
 
 import requests
 
-from utils import save_image, set_wallpaper_permanent
+from dwc.utils import save_image, set_wallpaper_permanent
 
 date = datetime.date.today()
 

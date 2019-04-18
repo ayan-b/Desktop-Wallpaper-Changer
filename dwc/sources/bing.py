@@ -3,7 +3,7 @@ from os import path
 from urllib.request import urlopen
 from xml.dom import minidom
 
-from utils import save_image, set_wallpaper_permanent
+from dwc.utils import save_image, set_wallpaper_permanent
 
 # get today's date
 date = str(datetime.date.today())

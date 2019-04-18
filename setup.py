@@ -5,7 +5,7 @@ requirement_list = [r.strip()
 
 if __name__ == '__main__':
     setup(
-        name='dwc',
+        name='dtwc',
         version='0.0.1',
         install_requires=requirement_list,
         description='Change your desktop wallpaper daily!',

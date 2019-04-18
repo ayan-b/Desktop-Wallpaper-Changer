@@ -15,7 +15,7 @@ Desktop Wallpaper Changer fetches images from popular sources and set those as y
 
 **Usage**:
 - First install the package from pypi by running:
-    `pip install dwc`
+    `pip install dtwc`
   > If you want to get latest code from master branch of the repository, you can
   do so by running:
     `pip install git+https://github.com/ayan-b/Desktop-Wallpaper-Changer`

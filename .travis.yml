@@ -34,6 +34,8 @@ stage: test
 script: pytest --cov=dwc
 
 before_install:
+  - pip install --upgrade pip
+  - pip install --upgrade setuptools
   - if [[ $TRAVIS_PYTHON_VERSION == "2.6" ]]; then pip install flake8==2.6.2; fi
   - pip install -r requirements.txt
   - pip install -r test-requirements.txt

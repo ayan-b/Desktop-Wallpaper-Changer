@@ -15,7 +15,6 @@ def main():
         dwc.change_background(int(options["option"]))
     
 
-
 def create_parser():
     """
     Construct the program options

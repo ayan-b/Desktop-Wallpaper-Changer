@@ -1,16 +1,38 @@
+sudo: required
 language: python
-cache: pip
+python:
+  - 3.7-dev
+  - 3.6
+  - 3.5
+notifications:
+  email: false
+stages:
+  - test
+  - lint
 
-matrix:
-    include:
-        - os: linux
-          sudo: required
-          dist: trusty
-          python: 3.6
+.disable_global: &disable_global
+  before_install: false
+  install: true
+  before_script: false
+  after_success: false
+  after_failure: false
 
-install:
-    - pip install -r test-requirements.txt 
+.lint: &lint
+  <<: *disable_global
+  python: 3.6
+  stage: lint
+  install: pip install -r test-requirements.txt
+  script: coala --ci
 
-script:
-    - echo "skipping tests"
-    - coala --non-interactive
+
+jobs:
+  include:
+    - *lint
+
+stage: test
+
+script: pytest --cov=dwc
+
+before_install:
+  - if [[ $TRAVIS_PYTHON_VERSION == "2.6" ]]; then pip install flake8==2.6.2; fi
+  - pip install -r requirements.txt

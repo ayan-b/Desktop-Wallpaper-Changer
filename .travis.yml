@@ -31,7 +31,14 @@ jobs:
 
 stage: test
 
-script: pytest --cov=dwc
+script:
+  - pytest --cov=dwc
+  - dwc -op 0
+  - dwc -op 1
+  - dwc -op 2
+  - "0"
+  - dwc -op 3
+  - dwc -op 4
 
 before_install:
   - pip install --upgrade pip

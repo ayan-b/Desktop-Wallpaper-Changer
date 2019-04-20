@@ -35,28 +35,11 @@ stage: test
 
 script:
   - pytest --cov=dwc
-  - dwc -op 0
-  - dwc -op 1
-  - dwc -op 2
-  - "0"
-  - dwc -op 3
-  - dwc -op 4
 
 before_install:
   - pip install --upgrade pip
   - pip install --upgrade setuptools
   - if [[ $TRAVIS_PYTHON_VERSION == "2.6" ]]; then pip install flake8==2.6.2; fi
-  # Installing gi starts
-  - sudo apt-get install gsettings-desktop-schemas python3-gi python3-gi-cairo libglib2.0-dev libffi-dev libgirepository1.0 libcairo2-dev python3-cairo-dev dbus-x11
-  - mkdir -p /tmp/install-pygtk
-  - cd /tmp/install-pygtk
-  - curl 'http://ftp.acc.umu.se/pub/GNOME/sources/pygobject/3.12/pygobject-3.12.0.tar.xz' > 'pygobject.tar.xz'
-  - tar -xvf pygobject.tar.xz
-  - cd pygobject*
-  - ./configure --prefix=$VIRTUAL_ENV PYTHON=python3
-  - make
-  - make install
-  # Ends
   - pip install -r requirements.txt
   - pip install -r test-requirements.txt
   - python setup.py install

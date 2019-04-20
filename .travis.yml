@@ -44,6 +44,7 @@ before_install:
   - pip install --upgrade pip
   - pip install --upgrade setuptools
   - if [[ $TRAVIS_PYTHON_VERSION == "2.6" ]]; then pip install flake8==2.6.2; fi
+  - sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0
   - pip install -r requirements.txt
   - pip install -r test-requirements.txt
   - python setup.py install

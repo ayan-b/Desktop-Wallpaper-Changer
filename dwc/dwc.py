@@ -53,7 +53,7 @@ def directoryCheck():
     pathlib.Path(saveDirDesktoppr).mkdir(parents=True, exist_ok=True)
 
 
-def change_background(choice):
+def change_background(choice, activate_search=True):
     directoryCheck()
     wp_bing = saveDirBing + 'bingwallpaper' + str(date) + '.jpg'
     wp_pod = saveDirAPoD + 'NASA_PoD' + str(date) + '.jpg'
@@ -67,7 +67,7 @@ def change_background(choice):
             wp_pod, saveDirAPoD, SHOW_DEBUG, date)
     elif choice == 2:
         unsplash_wallpaper_changer.change_wp(
-            wp_unsplash, saveDirUnsplash, SHOW_DEBUG)
+            wp_unsplash, saveDirUnsplash, SHOW_DEBUG, activate_search)
     elif choice == 3:
         natgeopod_wallpaper_changer.change_wp(
             wp_natgeo_pod, saveDirNatGeoPoD, SHOW_DEBUG)

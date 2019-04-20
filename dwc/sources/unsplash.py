@@ -18,7 +18,7 @@ def picpath_unsplash(file_url, saveDir, SHOW_DEBUG):
     return picPath_unsplash
 
 
-def change_wp(wp_unsplash, saveDir, SHOW_DEBUG):
+def change_wp(wp_unsplash, saveDir, SHOW_DEBUG, activate_search=True):
     url = 'https://source.unsplash.com/featured/2732x1536'
     if activate_search is True:
         choice = int(input(

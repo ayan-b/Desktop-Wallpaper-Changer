@@ -12,7 +12,7 @@ def main():
     if options["interactive"]:
         dwc.throw_choices()
     else:
-        dwc.change_background(int(options["option"]))
+        dwc.change_background(int(options["option"]), activate_search=False)
 
 
 def create_parser():

@@ -38,5 +38,5 @@ if __name__ == '__main__':
         python_requires='>=3.5',
         author_email='ayanbanerjee7777@gmail.com',
         url='https://github.com/ayan-b/Desktop-Wallpaper-Changer',
-        packages=find_packages(exclude=('tests',)),
+        packages=find_packages(),
     )

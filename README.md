@@ -33,6 +33,7 @@ Desktop Wallpaper Changer fetches images from popular sources and set those as y
 **Platforms Supported**:
  - Windows
  - Linux
+ 
  If you want your favorite platform to be supported please open an issue in the
  [issue tracker](https://github.com/ayan-b/Desktop-Wallpaper-Changer/issues).
 

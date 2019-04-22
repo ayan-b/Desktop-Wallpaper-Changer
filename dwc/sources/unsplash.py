@@ -3,7 +3,6 @@ import random
 
 from dwc.utils import save_image, set_wallpaper_permanent
 
-activate_search = True
 search_terms = []
 date = datetime.date.today()
 

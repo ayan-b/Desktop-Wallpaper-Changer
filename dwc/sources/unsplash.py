@@ -21,8 +21,8 @@ def change_wp(wp_unsplash, saveDir, SHOW_DEBUG, activate_search=True):
     url = 'https://source.unsplash.com/featured/2732x1536'
     if activate_search is True:
         choice = int(input(
-            'Do you want to search for specific images? 0: No, 1: Yes : '))
-        if choice == 1:
+            'Do you want to search for specific images? 0: No, 1: Yes [0]: '))
+        if choice:
             search_terms = input(
                 'Input the search terms (Space separated):').split()
             if len(search_terms) != 0:

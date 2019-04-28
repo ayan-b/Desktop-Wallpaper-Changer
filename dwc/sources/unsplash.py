@@ -20,11 +20,13 @@ def picpath_unsplash(file_url, saveDir, SHOW_DEBUG):
 def change_wp(wp_unsplash, saveDir, SHOW_DEBUG, activate_search=True):
     url = 'https://source.unsplash.com/featured/2732x1536'
     if activate_search is True:
-        choice = int(input(
-            'Do you want to search for specific images? 0: No, 1: Yes [0]: '))
-        if choice:
+        choice = input(
+            'Do you want to search for specific images? 0: No, 1: Yes [0]: '
+            )
+        if choice !='' and int(choice) == 1:
             search_terms = input(
-                'Input the search terms (Space separated):').split()
+                'Input the search terms (Space separated):'
+                ).split()
             if len(search_terms) != 0:
                 url = url + '?'
                 for items in search_terms:

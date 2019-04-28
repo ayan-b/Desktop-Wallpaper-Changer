@@ -23,7 +23,7 @@ if __name__ == '__main__':
     setup(
         name='dtwc',
         author='Ayan Banerjee',
-        version='0.0.2',
+        version='0.0.3',
         install_requires=requirement_list,
         description='Change your desktop wallpaper daily!',
         long_description=open('README.md').read(),

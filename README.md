@@ -2,9 +2,7 @@
 > This python script fetches images from popular sources and set those as your
 desktop wallpaper!
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/54b27c2612ee4301924e701d1b081375)](https://app.codacy.com/app/ayan-b/Desktop-Wallpaper-Changer)
 [![Build Status](https://travis-ci.org/ayan-b/Desktop-Wallpaper-Changer.svg?branch=master)](https://travis-ci.org/ayan-b/Desktop-Wallpaper-Changer)
-[![codecov](https://codecov.io/gh/ayan-b/Desktop-Wallpaper-Changer/branch/master/graph/badge.svg)](https://codecov.io/gh/ayan-b/Desktop-Wallpaper-Changer)
 [![Downloads](https://pepy.tech/badge/dtwc)](https://pepy.tech/project/dtwc)
 
 

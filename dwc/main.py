@@ -23,8 +23,7 @@ def create_parser():
         prog="dwc", description="Change your desktop wallpaper daily!"
     )
     parser.add_argument(
-        "-op",
-        "--option",
+        "option",
         help="The source for the wallpaper"
     )
     parser.add_argument(

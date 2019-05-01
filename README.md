@@ -27,7 +27,7 @@ your desktop wallpaper. Currently supported sources are:
 - In order to change the background you can use the CLI:
     - `dwc -i` will open all the wallpaper sources and you can select the one
     you like.
-    - `dwc -op <number>` will update the wallpaper from the number-th source
+    - `dwc <number>` will update the wallpaper from the number-th source
     as specified above.
 
 **Platforms Supported**:

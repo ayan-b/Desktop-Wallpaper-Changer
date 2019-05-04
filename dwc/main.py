@@ -24,7 +24,8 @@ def create_parser():
     )
     parser.add_argument(
         "option",
-        help="The source for the wallpaper"
+        help="The source for the wallpaper",
+        nargs="?",
     )
     parser.add_argument(
         "-i",

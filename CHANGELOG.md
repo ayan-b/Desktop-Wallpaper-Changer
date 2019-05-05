@@ -18,6 +18,7 @@ is now `dwc <number>`
 ### Updated
 
 1. Do not search in options mode for unsplash
+2. More useful error messages
 
 ### Added
 

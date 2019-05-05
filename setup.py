@@ -1,5 +1,8 @@
 from setuptools import find_packages, setup
 
+from dwc import _version
+
+
 requirement_list = [r.strip()
                     for r in open('requirements.txt', 'r').readlines() if r]
 
@@ -22,8 +25,8 @@ CLASSIFIERS = [
 if __name__ == '__main__':
     setup(
         name='dtwc',
-        author='Ayan Banerjee',
-        version='0.0.3',
+        author=_version.__author__,
+        version=_version.__version__,
         install_requires=requirement_list,
         description='Change your desktop wallpaper daily!',
         long_description=open('README.md').read(),

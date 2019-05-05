@@ -9,7 +9,8 @@ is now `dwc <number>`
 
 ### Added
 
-1. Added default unsplash search option as no
+1. Added default unsplash search option as `no`
+2. Use a centralized file `_version` to keep track of versions
 
 ## 0.0.2 - Apr 21, 2019
 

@@ -1,6 +1,7 @@
 import argparse
 
 import dwc.dwc as dwc
+from dwc import _version
 
 
 def main():
@@ -32,5 +33,10 @@ def create_parser():
         "--interactive",
         help="Interactively choose the source",
         action="store_true"
+    )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version="%(prog)s {v}".format(v=_version.__version__),
     )
     return parser

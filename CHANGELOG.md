@@ -11,6 +11,7 @@ is now `dwc <number>`
 
 1. Added default unsplash search option as `no`
 2. Use a centralized file `_version` to keep track of versions
+3. Added command line option `--version` to show the version
 
 ## 0.0.2 - Apr 21, 2019
 

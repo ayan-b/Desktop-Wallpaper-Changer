@@ -11,7 +11,6 @@ date = datetime.date.today()
 def get_photourl():
     url = 'https://www.nationalgeographic.com/photography/photo-of-the-day/_jcr_content/.gallery.json'
     source = requests.get(url)
-    print(source)
     if source.status_code == 200:
         source_code = source.json()
         photo_url = source_code['items'][0]['sizes']['2048']
